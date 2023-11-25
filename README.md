@@ -32,3 +32,9 @@ python setup.py install
 ```
 pip install -r requirements.txt
 ```
+
+#To import flask in your current environment
+
+```
+pip install Flask
+```
