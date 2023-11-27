@@ -45,6 +45,34 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
         logging.info('Exception occured during model training')
         raise customexception(e,sys)
     
+def evaluate_model(X_train,y_train,X_test,y_test,models):   #But I want to segragate my files so I have created model_evaluation.py, 
+                                                            #you can use any that one or this logic as per yourself
+    try:
+        report = {}
+        for i in range(len(models)):
+            model = list(models.values())[i]
+            # Train model
+            model.fit(X_train,y_train)
+
+            
+
+            # Predict Testing data
+            y_test_pred =model.predict(X_test)
+
+            # Get R2 scores for train and test data
+            #train_model_score = r2_score(ytrain,y_train_pred)
+            test_model_score = r2_score(y_test,y_test_pred)
+
+            report[list(models.keys())[i]] =  test_model_score
+
+        return report
+
+    except Exception as e:
+        logging.info('Exception occured during model training')
+        raise customexception(e,sys)
+
+
+
 def load_object(file_path):
     try:
         with open(file_path,'rb') as file_obj:
