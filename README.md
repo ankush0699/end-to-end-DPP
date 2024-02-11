@@ -1,5 +1,11 @@
-# This is my end to end project setup. 
+# This is my end to end project setup for predicting diamond price.
+
+# How to run?
+### STEPS:
+
 # Let's first initialize git.
+
+# Here we are using bash terminal
 ```
 git init
 ```
@@ -38,3 +44,12 @@ pip install -r requirements.txt
 ```
 pip install Flask
 ```
+
+```
+python app.py
+```
+
+```
+Now open up your local host 0.0.0.0:8080
+```
+
